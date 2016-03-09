@@ -153,19 +153,6 @@ print(Histogram1)
 
 ![](PA1_template_files/figure-html/unnamed-chunk-13-1.png) 
 
-We want also to save our Histogram on a png file, which for convenience we have pre formatted it to 480x480 pixels. We print the output of the previously stored chart in object `Histogram1`
-
-
-```r
-png(file="Histogram1.png", height=480, width=480)
-print(Histogram1)
-dev.off()
-```
-
-```
-## png 
-##   2
-```
 
 3. We calculate the mean and meadian of the number of steps per day taking adavntage of the `summary` function, which will display few more details, however very good in this case to get Mean and Median
 
@@ -215,19 +202,8 @@ TimeSeries1 <- ggplot(mean_step_interval, aes(interval, steps)) + geom_line() + 
 print(TimeSeries1)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-18-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-17-1.png) 
 
-
-```r
-png(file="TimeSeries1.png", height=480, width=480)
-print(TimeSeries1)
-dev.off()
-```
-
-```
-## png 
-##   2
-```
 
 2. To get the 5-minute interval with the max number of steps, on average, acrross all days, we start from the previously calculated data set and get a subset of it exactly for the row index (obtained with function which.max) which has the maximum number of steps
 
@@ -338,19 +314,7 @@ Histogram2 <- ggplot(data=total_step_day_complete, aes(steps)) + geom_histogram(
 print(Histogram2)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-26-1.png) 
-
-
-```r
-png(file="Histogram2.png", height=480, width=480)
-print(Histogram2)
-dev.off()
-```
-
-```
-## png 
-##   2
-```
+![](PA1_template_files/figure-html/unnamed-chunk-24-1.png) 
 
 
 We will now calculate the mean and meadian of the steps taken per day and see if there is  adifference between the data without missing values compared to the original data with missing values
@@ -430,12 +394,6 @@ Calculate the average number of steps taken, averaged across all weekday days or
 avgStepsInterval_complete <- aggregate(steps ~ FlagDay + interval, activity_complete, mean)
 ```
 
-Prepare the output file TimeSeries2.png and define the area
-
-```r
-png(file="TimeSeries2.png", height=480, width=480)
-```
-
 Plot the time series
 
 ```r
@@ -444,13 +402,13 @@ TimeSeries2 <- ggplot(avgStepsInterval_complete, aes(interval, steps)) + geom_li
 print(TimeSeries2)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-34-1.png) 
+![](PA1_template_files/figure-html/unnamed-chunk-30-1.png) 
 
 ```r
 dev.off()
 ```
 
 ```
-## png 
-##   3
+## null device 
+##           1
 ```
